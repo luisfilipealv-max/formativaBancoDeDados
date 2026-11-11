@@ -2,10 +2,6 @@ CREATE DATABASE academiamovimentomais_luis17;
 
 USE academiamovimentomais_luis17;
 
-SELECT name AS NomeDoBanco
-FROM sys.databases
-ORDER BY name;
-
 CREATE TABLE Cliente(
     IdCliente INT IDENTITY(1,1) PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -130,9 +126,19 @@ VALUES
 (9, 9, '2026-03-05', '20:00', 16, 'Sala de Lutas'),
 (10, 10, '2026-03-06', '17:00', 20, 'Estúdio 1');
 
--- Consultando os dados das tabelas
+-- Inserindo Matrículas (opcional)
+INSERT INTO Matricula (IdCliente, IdPlano, DataInicio, StatusMatricula, Desconto)
+VALUES
+(1, 1, '2026-01-10', 'Ativa', 0.00),
+(2, 2, '2026-01-15', 'Ativa', 5.00),
+(3, 3, '2026-02-01', 'Ativa', 0.00),
+(4, 4, '2026-02-10', 'Ativa', 10.00),
+(5, 5, '2026-03-01', 'Ativa', 0.00);
+
+-- Consultando os dados
+SELECT * FROM Cliente;
 SELECT * FROM Instrutores;
 SELECT * FROM Modalidades;
 SELECT * FROM Planos;
-SELECT * FROM Cliente;
+SELECT * FROM Matricula;
 SELECT * FROM Aulas;
